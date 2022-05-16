@@ -31,3 +31,5 @@ if __name__ == "__main__":
     #print(isinstance([1, 2, 3], list[int]))
     #print(issubclass(list, list(int)))
     print(isinstance(list[int], GenericAlias))
+
+    
