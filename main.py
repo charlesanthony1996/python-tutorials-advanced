@@ -901,3 +901,122 @@ print(result)
 
 print()
 
+##nullable boolean data type
+
+s = pd.Series([1, 2, 3])
+
+mask = pd.array([True, False, pd.NA], dtype="boolean")
+
+print(s[mask])
+
+print()
+
+s[mask.fillna(True)]
+
+print()
+
+pd.Series([True, False, np.nan], dtype="object") | True
+
+pd.Series([True, False, np.nan], dtype="boolean") | True
+
+pd.Series([True, False, np.nan], dtype="object") & False
+
+pd.Series([False, True, np.nan], dtype="boolean") & True
+
+print()
+
+
+arr = pd.array([1, 2, None], dtype=pd.Int64Dtype())
+
+print(arr)
+
+print()
+
+
+arr = pd.array([1, 2, np.nan], dtype="Int64")
+
+print(arr)
+
+print()
+
+
+arr = pd.array([1, 2, np.nan, None, pd.NA], dtype="Int64")
+
+print(arr)
+
+print()
+
+print(pd.Series(arr))
+
+print()
+
+
+s = pd.Series([1, 2, None], dtype="Int64")
+
+print(s)
+
+print(s+ 1)
+
+
+print(s == 1)
+
+print()
+
+print(s.iloc[1:3])
+
+print()
+
+print(s + s.iloc[1:3].astype("Int8"))
+
+print()
+
+
+print(s + 0.01)
+
+print()
+
+
+df = pd.DataFrame({"A": s, "B":[1, 1, 3], "C": list("aab")})
+
+print()
+
+
+print(df)
+
+
+print(df.dtypes)
+
+
+print()
+
+
+arr = pd.concat([df[["A"]], df[["B", "C"]]] , axis= 1).dtypes
+
+
+print(arr)
+
+print()
+
+
+print(df["A"].astype(float))
+
+print()
+
+print(df["B"].astype(float))
+
+print()
+
+print(df.sum)
+
+print()
+
+
+print(df.groupby("B").A.sum)
+
+print()
+
+a = pd.array([1, None], dtype="Int64")
+
+print(a)
+
+print()
